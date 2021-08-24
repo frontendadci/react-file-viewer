@@ -37,6 +37,8 @@ class FileViewer extends Component {
       case 'csv': {
         return withFetching(CsvViewer, this.props);
       }
+      case 'ods':
+      case 'xls':
       case 'xlsx': {
         const newProps = Object.assign({}, this.props, { responseType: 'arraybuffer' });
         return withFetching(XlsxViewer, newProps);
@@ -88,12 +90,14 @@ FileViewer.propTypes = {
   onError: PropTypes.func,
   errorComponent: PropTypes.element,
   unsupportedComponent: PropTypes.element,
+  withCredentials: PropTypes.bool,
 };
 
 FileViewer.defaultProps = {
   onError: () => null,
   errorComponent: null,
   unsupportedComponent: null,
+  withCredentials: false,
 };
 
 export default FileViewer;
