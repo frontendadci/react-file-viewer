@@ -30,6 +30,9 @@ an `unsupported file type` message (or a custom component).
 viewer fetching or rendering the requested resource. This is a place where you can
 pass a callback for a logging utility.
 
+`withCredentials` bool [optional]: indicates whether or not cross-site Access-Control requests 
+should be made using credentials such as cookies, authorization headers or TLS client certificates.
+
 `errorComponent` react element [optional]: A component to render in case of error
 instead of the default error component that comes packaged with react-file-viewer.
 

@@ -5,6 +5,8 @@ import VisibilitySensor from 'react-visibility-sensor';
 import { PDFJS } from 'pdfjs-dist/build/pdf.combined';
 import 'pdfjs-dist/web/compatibility';
 
+import Loading from '../loading';
+
 PDFJS.disableWorker = true;
 const INCREASE_PERCENTAGE = 0.2;
 const DEFAULT_SCALE = 1.1;
@@ -104,8 +106,11 @@ export default class PDFDriver extends React.Component {
   }
 
   progressCallback(progress) {
-    const percent = ((progress.loaded / progress.total) * 100).toFixed();
-    this.setState({ percent });
+    if (progress.total) {
+      console.log(progress);
+      const percent = ((progress.loaded / progress.total) * 100).toFixed();
+      this.setState({ percent });
+    }
   }
 
   reduceZoom() {
@@ -138,7 +143,7 @@ export default class PDFDriver extends React.Component {
 
   renderLoading() {
     if (this.state.pdf) return null;
-    return (<div className="pdf-loading">LOADING ({this.state.percent}%)</div>);
+    return <Loading />;
   }
 
   render() {
