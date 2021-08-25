@@ -34,10 +34,9 @@ export default class extends Component {
   }
 
   render() {
-    const LoaderComponent = this.props.loaderComponent || Loading;
     return (
       <div id="docx">
-        <LoaderComponent />
+        <Loading {...this.props} />
       </div>);
   }
 }

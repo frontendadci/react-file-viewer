@@ -141,9 +141,8 @@ export default class PDFDriver extends React.Component {
   }
 
   renderLoading() {
-    const LoaderComponent = this.props.loaderComponent || Loading;
     if (this.state.pdf) return null;
-    return <LoaderComponent />;
+    return <Loading {...this.props} />;
   }
 
   render() {

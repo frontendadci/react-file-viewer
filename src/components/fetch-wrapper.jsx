@@ -80,13 +80,11 @@ function withFetching(WrappedComponent, props) {
         return <Error {...this.props} error={this.state.error} />;
       }
 
-      const LoaderComponent = this.props.loaderComponent || Loading;
-
       if (this.state.data) {
         return <WrappedComponent data={this.state.data} {...this.props} />;
       }
       return (
-        <LoaderComponent />
+        <Loading {...this.props} />
       );
     }
   };
