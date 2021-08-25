@@ -26,7 +26,7 @@ export default class extends Component {
           document.getElementById('docx').innerHTML = docEl.outerHTML;
         })
         .catch((a) => {
-          console.log('alexei: something went wrong', a);
+          console.log('An error happened', a);
         })
         .done();
       }
@@ -34,9 +34,10 @@ export default class extends Component {
   }
 
   render() {
+    const LoaderComponent = this.props.loaderComponent || Loading;
     return (
       <div id="docx">
-        <Loading />
+        <LoaderComponent />
       </div>);
   }
 }

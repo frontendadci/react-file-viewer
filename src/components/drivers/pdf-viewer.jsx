@@ -107,7 +107,6 @@ export default class PDFDriver extends React.Component {
 
   progressCallback(progress) {
     if (progress.total) {
-      console.log(progress);
       const percent = ((progress.loaded / progress.total) * 100).toFixed();
       this.setState({ percent });
     }
@@ -142,8 +141,9 @@ export default class PDFDriver extends React.Component {
   }
 
   renderLoading() {
+    const LoaderComponent = this.props.loaderComponent || Loading;
     if (this.state.pdf) return null;
-    return <Loading />;
+    return <LoaderComponent />;
   }
 
   render() {

@@ -90,6 +90,7 @@ FileViewer.propTypes = {
   onError: PropTypes.func,
   errorComponent: PropTypes.element,
   unsupportedComponent: PropTypes.element,
+  loaderComponent: PropTypes.element,
   withCredentials: PropTypes.bool,
 };
 
@@ -97,6 +98,7 @@ FileViewer.defaultProps = {
   onError: () => null,
   errorComponent: null,
   unsupportedComponent: null,
+  loaderComponent: null,
   withCredentials: false,
 };
 
