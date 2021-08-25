@@ -39,6 +39,8 @@ instead of the default error component that comes packaged with react-file-viewe
 `unsupportedComponent` react element [optional]: A component to render in case
 the file format is not supported.
 
+`loaderComponent` react element [optional]: Custom loader component.
+
 To use a custom error component, you might do the following:
 
 ```
